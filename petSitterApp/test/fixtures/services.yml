@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  home_sitting: MyString
+  walking: MyString
+  grooming: MyString
+  daycare: MyString
+  user_id: 1
+
+two:
+  home_sitting: MyString
+  walking: MyString
+  grooming: MyString
+  daycare: MyString
+  user_id: 1
