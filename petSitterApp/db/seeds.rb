@@ -29,10 +29,8 @@ pet1 = Pet.create(name: "Bin", age: 5, type_of_pet: "Dog", gender: "Male", descr
 pet2 = Pet.create(name: "Smudge", age: 5, type_of_pet: "Cat", gender: "Female", description: "White in colour", image: "imageOfCat", user_id: user2.id )
 pet3 = Pet.create(name: "Box", age: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
 
-# t.string :name
-# t.integer :age
-# t.string :type
-# t.string :gender
-# t.text :description
-# t.text :image
-# t.integer :user_id
+Service.destroy_all
+
+service1 = Service.create(name: "Home Care", description: "All care done at home", price: 24)
+service2 = Service.create(name: "Pet sitter", description: "Taking care at owns house", price: 57)
+service3 = Service.create(name: "Walk", description: "Park walk", price: 42)
