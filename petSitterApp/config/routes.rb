@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
-  resources :pets
-=======
-  resources :services, :users
+  get "/" => "pages#home"
 
->>>>>>> 377b9e0818093e3c38bfecd8951f8fdb7f989d15
+  get "/wall" => "pages#wall"
+
+  get "/book" => "pages#book"
+
+
+  resources :services, :users, :pets
 
 end

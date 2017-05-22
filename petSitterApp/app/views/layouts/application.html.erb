@@ -7,8 +7,32 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <body>
+     <div class="navbar">
+      <%= flash[:error] %>
+       <nav class="blue accent-2" role="navigation">
+         <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo"><img src="http://i.imgur.com/iQznv6t.png" class="logo"></a>
+
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/book" class="btn-small waves-effect waves-light">Book A Sitter</a></li>
+          </ul>
+
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/wall" class="btn-small waves-effect waves-light">Wall Of Pets</a></li>
+          </ul>
+          </div>
+      < /nav>
+
+    </div>
+
+
+
+
+
+
+
     <%= yield %>
   </body>
 </html>
