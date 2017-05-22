@@ -25,7 +25,7 @@ user3 = User.create(name: "Rocket", email: "rocket@rocket.com", password:"rocket
 
 Pet.destroy_all
 
-pet1 = Pet.create(name: "Bin", date_of_birth: 5, type_of_pet: "Dog", gender: "Male", description: "Brown in colour", image: "imageOfDog", user_id: user1.id )
+pet1 = Pet.create(name: "Bin", date_of_birth: 5, type_of_pet: "Dog", gender: "Male", description: "Brown in colour", image: "http://www.info-psi.estranky.cz/img/picture/30/77256-270px-clyde_the_bulldog.jpg", user_id: user1.id )
 pet2 = Pet.create(name: "Smudge", date_of_birth: 5, type_of_pet: "Cat", gender: "Female", description: "White in colour", image: "imageOfCat", user_id: user2.id )
 pet3 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
 
