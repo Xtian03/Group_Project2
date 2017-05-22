@@ -10,7 +10,7 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
     @service.save
-       redirect_to @service, notice: 'Service was successfully created.'   
+       redirect_to @service, notice: 'Service was successfully created.'
   end
 
   def new
@@ -21,11 +21,10 @@ class ServicesController < ApplicationController
   end
 
   def destroy
+      @service = Service.find(params[:id])
       @service.destroy
-      respond_to do |format|
-        redirect_to services_url, notice: 'Service was successfully destroyed.'
-      end
-    end
+      redirect_to services_path
+  end
 
   private
   def service_params
