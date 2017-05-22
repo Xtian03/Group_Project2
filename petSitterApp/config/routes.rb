@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :services, :users
+  get "/" => "pages#home"
 
+  get "/wall" => "pages#wall"
+
+  get "/book" => "pages#book"
+
+
+  resources :services, :users, :pets
 
 end
