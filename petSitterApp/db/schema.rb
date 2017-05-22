@@ -27,14 +27,14 @@ ActiveRecord::Schema.define(version: 20170521094058) do
 
   create_table "pets", force: :cascade do |t|
     t.string   "name"
-    t.integer  "age"
+    t.integer  "date_of_birth"
     t.string   "type_of_pet"
     t.string   "gender"
     t.text     "description"
     t.text     "image"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20170521094058) do
   create_table "services_users", id: false, force: :cascade do |t|
     t.integer "service_id", null: false
     t.integer "user_id",    null: false
+    t.index ["service_id", "user_id"], name: "index_services_users_on_service_id_and_user_id", using: :btree
+    t.index ["user_id", "service_id"], name: "index_services_users_on_user_id_and_service_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
