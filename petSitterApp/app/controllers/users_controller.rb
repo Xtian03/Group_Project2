@@ -13,8 +13,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create
-    User.create(params[:id])
+      @user = User.new(user_params)
+      # post.user = @current_user
+      cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
+      @user.image = cloudinary["url"]
+      @user.save
+      redirect_to "/users"
   end
 
   def edit
@@ -22,11 +26,15 @@ class UsersController < ApplicationController
   end
 
   def update
-
   end
 
   def destroy
   end
+
+  private
+    def user_params
+      params.required(:user).permit(:name, :email, :password, :password_confirmation, :location, :image)
+    end
 
 end
 
