@@ -3,19 +3,13 @@
 one:
   name: MyString
   email: MyString
-  password: MyString
+  password_digest: MyText
   location: MyString
-  image: MyString
-  pet_id: 1
-  service_id: 1
-  rating: 1
+  image: MyText
 
 two:
   name: MyString
   email: MyString
-  password: MyString
+  password_digest: MyText
   location: MyString
-  image: MyString
-  pet_id: 1
-  service_id: 1
-  rating: 1
+  image: MyText

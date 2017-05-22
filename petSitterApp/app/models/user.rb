@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  has_many :ratings,
-  has_many :bookings,
-  has_many :pets,
-  has_many :services 
+  has_secure_password
+  has_and_belongs_to_many :services
+  has_many :pets
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170520052359) do
+ActiveRecord::Schema.define(version: 20170521094058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,14 +27,14 @@ ActiveRecord::Schema.define(version: 20170520052359) do
 
   create_table "pets", force: :cascade do |t|
     t.string   "name"
-    t.integer  "age"
-    t.string   "type"
+    t.integer  "date_of_birth"
+    t.string   "type_of_pet"
     t.string   "gender"
     t.text     "description"
     t.text     "image"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -46,26 +46,28 @@ ActiveRecord::Schema.define(version: 20170520052359) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.string   "home_sitting"
-    t.string   "walking"
-    t.string   "grooming"
-    t.string   "daycare"
-    t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "name"
+    t.text     "description"
+    t.integer  "price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "services_users", id: false, force: :cascade do |t|
+    t.integer "service_id", null: false
+    t.integer "user_id",    null: false
+    t.index ["service_id", "user_id"], name: "index_services_users_on_service_id_and_user_id", using: :btree
+    t.index ["user_id", "service_id"], name: "index_services_users_on_user_id_and_service_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password"
+    t.text     "password_digest"
     t.string   "location"
-    t.string   "image"
-    t.integer  "pet_id"
-    t.integer  "service_id"
-    t.integer  "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "image"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
