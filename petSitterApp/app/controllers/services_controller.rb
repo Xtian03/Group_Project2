@@ -18,6 +18,7 @@ class ServicesController < ApplicationController
   end
 
   def edit
+    @service = Service.find_by(id: params["id"])
   end
 
   def destroy
