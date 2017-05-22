@@ -34,3 +34,14 @@ Service.destroy_all
 service1 = Service.create(name: "Home Care", description: "All care done at home", price: 24)
 service2 = Service.create(name: "Pet sitter", description: "Taking care at owns house", price: 57)
 service3 = Service.create(name: "Walk", description: "Park walk", price: 42)
+
+#Bookings.destroy_all
+
+#booking1 = Booking.create(start_time: "4", end_time: "7", service_id: service1.id,)
+
+
+# t.datetime :start_time
+# t.datetime :end_time
+# t.integer :service_id
+# t.integer :owner_id
+# t.integer :sitter_id
