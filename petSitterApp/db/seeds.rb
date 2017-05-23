@@ -18,10 +18,9 @@
 
 User.destroy_all
 
-user1 = User.create(name: "Bill", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "imageOfBill")
-user2 = User.create(name: "Hash", email: "hash@hash.com", password: "hash", password_confirmation: "hash", location: "Melbourne", image: "imageOfHash")
-user3 = User.create(name: "Rocket", email: "rocket@rocket.com", password:"rocket", password_confirmation: "rocket", location: "Canberra")
-
+user1 = User.create(name: "Bill", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
+user2 = User.create(name: "Hash", email: "hash@hash.com", password: "hash", password_confirmation: "hash", location: "Melbourne", image: "http://machash.com/img/machash-icon-144.png")
+user3 = User.create(name: "Rocket", email: "rocket@rocket.com", password:"rocket", password_confirmation: "rocket", location: "Canberra", image: "https://s-media-cache-ak0.pinimg.com/originals/0e/fd/07/0efd070c6a01bc39811151d149b1ac59.gif")
 
 Pet.destroy_all
 
