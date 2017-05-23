@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :authorise, only: [:new, :create]
+  # before_action :authorise, only: [:new, :create]
 
   def index
     @all_pets = Pet.all

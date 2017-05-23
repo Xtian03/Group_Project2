@@ -9,7 +9,7 @@
   <ul>
     <% @user.services.each do |service| %>
       <div>
-        <%= link_to(name_tag(service.name), "/services/#{service.id}") %>
+        <%= link_to(image_tag(service.name), "/services/#{service.id}") %>
       </div>
     <% end %>
   </ul>
@@ -18,26 +18,6 @@
    <div class="row center">
      <a href="/pets/new" class="waves-effect waves-light btn blue">Add New </a>
 </div>
-
-<table>
-  <tr>
-    <td>
-      Name: <%= @user.name  %>
-    </td>
-    <td>
-      Email: <%= @user.email %>
-    </td>
-    <td>
-      Location: <%= @user.location %>
-    </td>
-    <td>
-      Image: <%=image_tag @user.image %>
-    </td>
-    <td>
-      Password Digest: <%= @user.password_digest %>
-    </td>
-  </tr>
-</table>
 
 <h2> Pets List </h2>
 
@@ -48,5 +28,3 @@
     </div>
   <% end %>
 </ul>
-
-<link_to

@@ -4,7 +4,7 @@
 <%= link_to "Create New Users", "/users/new" %>
 </h4>
 
-<% @userall.each do |user| %>
+<% @users_all.each do |user| %>
 <p>
     <%= link_to( user.name, "/users/#{user.id}" ) %>
 </p>

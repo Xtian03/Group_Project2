@@ -7,6 +7,8 @@ class PagesController < ApplicationController
   end
 
   def wall
+    @pets = Pet.all
+
   end
 
 end

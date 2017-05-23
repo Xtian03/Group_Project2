@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :check_if_logged_in, only: [:edit, :update]
 
   def index
-    @userall = User.all
+    @users_all = User.all
   end
 
   def show
@@ -35,7 +35,6 @@ class UsersController < ApplicationController
   end
 
   def update
-
     user = User.find_by(id: params["id"])
     user.update( user_params() )
     redirect_to "/users/#{user.id}"
