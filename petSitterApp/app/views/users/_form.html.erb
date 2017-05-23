@@ -1,16 +1,10 @@
-
-
-
-<!-- <% unless @user.errors.full_messages.empty? %>
-
+<% unless @user.errors.full_messages.empty? %>
   <% @user.errors.full_messages.each do |msg| %>
     <p>
       <%= msg %>
     </p>
-  <% end %>
-
-<% end %> -->
-
+   <% end %>
+<% end %>
 
 <%= form_for(@user, :html => {:multipart => true}) do |f| %>
   <p>
@@ -39,5 +33,16 @@
   </p>
 
 
+  <% Service.all.each do |service| %>
+     <p>
+       <% if @user.service_ids.include?(service.id) %>
+         <input type="checkbox" id="<%= service.id %>" name="user[service_ids][]" value="<%= service.id %>" checked="true" />
+       <% else %>
+         <input type="checkbox" id="<%= service.id %>" name="user[service_ids][]" value="<%= service.id %>" />
+       <% end %>
+       <label for="<%= service.id %>"><%= "#{service.name} #{service.description}" %></label>
+     </p>
+   <% end %>
+
   <%= f.submit %>
-  <% end %>
+    <% end %>

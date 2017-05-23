@@ -16,19 +16,19 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new( user_params )
-  if @user.save
-    session[:user_id] = @user.id
-    redirect_to user_path( @user )
-  else
-    render :new
-      @user = User.new(user_params)
-      # post.user = @current_user
-      cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
-      @user.image = cloudinary["url"]
-      @user.save
-      redirect_to "/users"
-  end
+    cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
+    @user.image = cloudinary["url"]
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to user_path( @user )
+    else
 
+      render :new
+        # post.user = @current_user
+
+        # @user.save
+    end
+  end
 
   def edit
     @user = User.find_by(id: params['id'])
@@ -46,12 +46,11 @@ class UsersController < ApplicationController
       user.destroy
       redirect_to "/"
   end
-end
 
 private
 
   def user_params
-     params.require(:user).permit(:name, :password, :password_confirmation, :email, :location, :image)
+     params.require(:user).permit(:name, :password, :password_confirmation, :email, :location, :image, :service_ids => [])
   end
 
   def check_if_logged_out
@@ -69,22 +68,3 @@ private
   end
 
 end
-
-
-# Finish the create step --
-  # Define strong params --
-  # Create the user --
-  # Redirect to the list of all users --
-
-# Get into the edit step
-  # Add the form into edit.html.erb (look similar to new.html.erb)
-
-# Get into the update step
-  # Update the user (using user_params - strong params)
-  # Redirect to the profile page of that user
-
-# Get into the destroy step
-  # Button on a page
-  # When someone clicks that
-    # Delete the user
-    # Redirect to the list of all users
