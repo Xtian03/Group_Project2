@@ -59,6 +59,7 @@ private
       flash[:error] = "You are already logged in!"
       redirect_to "/users"
     end
+
   end
 
   def check_if_logged_in

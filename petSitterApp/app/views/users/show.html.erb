@@ -2,6 +2,7 @@
 <a href="/users" ></a>
 <%= image_tag( @user.image ) %>
 
+
 <ul>
   <li>name: <%= @user.name %></li>
   <li>Location: <%= @user.location %></li>
@@ -15,14 +16,24 @@
   </ul>
 </ul>
 <div class="container" width: 40%;>
-
    <div class="row center">
-     <a href="/pets/new" class="waves-effect waves-light btn blue">Add New Pet</a>
-  </div>
+     <a href="/pets/new" class="waves-effect waves-light btn blue">Add New </a>
+
+</div>
+
+<h2>Services List</h2>
+<ul>
+<% @user.services.each do |pet| %>
+  <%= link_to(image_tag(service.name)) %>
 
 
-<div class="box">
+</ul>
+
+
+
+
 <h2> Pets List </h2>
+
 <ul>
   <% @user.pets.each do |pet| %>
     <div class="listImage" >
@@ -30,5 +41,5 @@
     </div>
   <% end %>
 </ul>
-    </div>
+
 </div>
