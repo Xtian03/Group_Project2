@@ -1,7 +1,25 @@
-<h3><%= @user.name %></h3>
 
 <a href="/users" ></a>
+<%= image_tag( @user.image ) %>
 
+<<<<<<< HEAD
+<ul>
+  <li>name: <%= @user.name %></li>
+  <li>Location: <%= @user.location %></li>
+  <li>Email: <%= @user.email %></li>
+  <ul>
+    <% @user.services.each do |service| %>
+      <div>
+        <%= link_to(name_tag(service.name), "/services/#{service.id}") %>
+      </div>
+    <% end %>
+  </ul>
+</ul>
+<div class="container" width: 40%;>
+   <div class="row center">
+     <a href="/pets/new" class="waves-effect waves-light btn blue">Add New </a>
+</div>
+=======
 <table>
   <tr>
     <td>
@@ -21,6 +39,15 @@
     </td>
   </tr>
 </table>
+>>>>>>> 2a8218019efb115bb3dc02a39213e8c209b5d572
 
 
-<!-- ENTER SERVICES AND PETS BUTTONS FROM HERE  -->
+<h2> Pets List </h2>
+
+<ul>
+  <% @user.pets.each do |pet| %>
+    <div class="listImage" >
+      <%= link_to(image_tag(pet.image), "/pets/#{pet.id}") %>
+    </div>
+  <% end %>
+</ul>
