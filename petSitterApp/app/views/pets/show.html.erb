@@ -12,11 +12,17 @@
   <li>Description: <%= @pet.description %></li>
 
 </ul>
+
+
+
     <div class="controls">
+      <% if @current_user.id == @pet.user_id %>
       <%= link_to("Edit Pet", "/pets/#{@pet.id}/edit") %>
       <%= link_to("Delete Pet", "/pets/#{@pet.id}", method: :delete, data: { confirm: "Are you sure?" }) %>
-    </div>
+      <% else %>
+      <% end %>
 
+    </div>
 
 
     <p>
