@@ -16,17 +16,18 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new( user_params )
-  if @user.save
-    session[:user_id] = @user.id
-    redirect_to user_path( @user )
-  else
-    render :new
-      @user = User.new(user_params)
-      # post.user = @current_user
-      cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
-      @user.image = cloudinary["url"]
-      @user.save
-      redirect_to "/users"
+    cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
+    @user.image = cloudinary["url"]
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to user_path( @user )
+    else
+
+      render :new
+        # post.user = @current_user
+
+        # @user.save
+    end
   end
 
   def edit
@@ -45,12 +46,11 @@ class UsersController < ApplicationController
       user.destroy
       redirect_to "/"
   end
-end
 
 private
 
   def user_params
-     params.require(:user).permit(:name, :password, :password_confirmation, :email, :location, :image)
+     params.require(:user).permit(:name, :password, :password_confirmation, :email, :location, :image, :service_ids => [])
   end
 
   def check_if_logged_out
