@@ -26,5 +26,16 @@
   </p>
 
 
+  <% Service.all.each do |service| %>
+     <p>
+       <% if @user.service_ids.include?(service.id) %>
+         <input type="checkbox" id="<%= service.id %>" name="user[service_ids][]" value="<%= service.id %>" checked="true" />
+       <% else %>
+         <input type="checkbox" id="<%= service.id %>" name="user[service_ids][]" value="<%= service.id %>" />
+       <% end %>
+       <label for="<%= service.id %>"><%= "#{service.name} #{service.description}" %></label>
+     </p>
+   <% end %>
+
   <%= f.submit %>
-  <% end %>
+    <% end %>
