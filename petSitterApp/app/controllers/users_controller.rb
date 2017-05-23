@@ -42,6 +42,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+
       user = User.find_by(id: params["id"])
       user.destroy
       redirect_to "/"
@@ -58,6 +59,7 @@ private
       flash[:error] = "You are already logged in!"
       redirect_to "/users"
     end
+
   end
 
   def check_if_logged_in
