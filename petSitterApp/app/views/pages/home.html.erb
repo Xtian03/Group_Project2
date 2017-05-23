@@ -1,5 +1,12 @@
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
+
+<div class="container" width: 50%;>
+  <div class="row center">
+      <h5 class="header col s12 light">What is the the location you looking for PetSitter?</h5>
+  </div>
+    <%= form_tag(users_path, method: :get) do %>
+    <%= text_field_tag :location  %>
+    <%= submit_tag 'Search', {:class => "searchButton btn-floating btn-large waves-effect blue", required: true} %>
+    <% end %>
+
+    </div>
+

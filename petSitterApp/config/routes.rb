@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get "/" => "pages#home"
 
-  get "/wall" => "pages#wall"
+  get "/wall" => "pets#index"
 
   get "/book" => "pages#book"
 

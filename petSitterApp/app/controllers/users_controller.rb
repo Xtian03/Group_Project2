@@ -4,6 +4,16 @@ class UsersController < ApplicationController
 
   def index
     @userall = User.all
+  # if params["location"] is defined
+  #   if params[:location].present?
+  #   # Users.where("location like ?", "%"+params[:location]+"%")
+  #   # Users.find(:all, :location => ["location like ?", "%"+params[:location]+"%"])
+  # # @users should be all users where the name field matches params["name"]
+  #   @users = User.where(:location => ["location like ?", "%"+params[:location]+"%"])
+  #   # User.where(location_field, "<%#{params[:location]}%>")
+  #   else
+  #   @users = User.search(params[:search])
+  #   end
   end
 
   def show
