@@ -7,6 +7,11 @@ class PagesController < ApplicationController
   end
 
   def wall
+    @wall = Pet.all
+  end
+
+  def search
+    @search = User.where(name: params[:search])
   end
 
 end

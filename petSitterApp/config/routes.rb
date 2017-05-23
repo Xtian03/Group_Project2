@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get "/book" => "pages#book"
 
+  get "/search" => "pages#search"
+
   get '/users/:id/edit' => 'users#edit'
   patch '/users/:id' => 'users#update'
 

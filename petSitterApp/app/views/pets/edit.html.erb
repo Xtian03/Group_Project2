@@ -1,7 +1,6 @@
 <h1>Edit Pet</h1>
 
-<%= form_for @pet, url: "/pets/#{@pet.id}" do |f| %>
-
+<%= form_for @pet, :html => {:multipart => true}, url: "/pets/#{@pet.id}" do |f| %>
 <p>
   <%= f.label :name %>
   <%= f.text_field :name, required: true %>
@@ -24,7 +23,7 @@
 </p>
 <p>
   <%= f.label :image %>
-  <%= f.url_field :image %>
+  <%= f.file_field :image %>
 </p>
 <%= f.submit "Update Pet"%>
 
