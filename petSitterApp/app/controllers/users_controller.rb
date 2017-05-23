@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :check_if_logged_out, only: [:new, :create]
   before_action :check_if_logged_in, only: [:edit, :update]
-  
+
   def index
     @userall = User.all
   end
@@ -21,6 +21,12 @@ class UsersController < ApplicationController
     redirect_to user_path( @user )
   else
     render :new
+      @user = User.new(user_params)
+      # post.user = @current_user
+      cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
+      @user.image = cloudinary["url"]
+      @user.save
+      redirect_to "/users"
   end
 
 
@@ -29,6 +35,7 @@ class UsersController < ApplicationController
   end
 
   def update
+
     user = User.find_by(id: params["id"])
     user.update( user_params() )
     redirect_to "/users/#{user.id}"
@@ -60,6 +67,7 @@ private
       redirect_to "/login"
     end
   end
+
 end
 
 
