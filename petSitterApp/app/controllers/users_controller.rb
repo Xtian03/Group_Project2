@@ -22,7 +22,6 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path( @user )
     else
-
       render :new
 
     end
@@ -33,9 +32,15 @@ class UsersController < ApplicationController
   end
 
   def update
+    user = User.find_by( id: params['id'] )
+    user.update( user_params )
 
-    user = User.find_by(id: params["id"])
-    user.update( user_params() )
+    if params[:user][:image]
+      cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
+      user.image = cloudinary["url"]
+    end
+    user.save
+
     redirect_to "/users/#{user.id}"
   end
 

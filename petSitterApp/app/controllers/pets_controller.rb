@@ -10,10 +10,12 @@ class PetsController < ApplicationController
   end
 
   def create
-  pet = Pet.new( pet_params )
-  pet.supplier = @current_user
-  pet.save
-  redirect_to pet_path(pet)
+  @pet = Pet.new( pet_params )
+  @user = @pet.user
+  cloudinary = Cloudinary::Uploader.upload( params[ "pet" ][ "image" ] )
+  @pet.image = cloudinary["url"]
+  @pet.save
+  redirect_to user_path(@user)
  end
 
   def edit
@@ -27,8 +29,18 @@ class PetsController < ApplicationController
 
   def update
     pet = Pet.find_by(id: params["id"])
-    pet.update( pet_params() )
+    pet.update( pet_params )
+    cloudinary = Cloudinary::Uploader.upload( params[ "pet" ][ "image" ] )
+    pet.image = cloudinary["url"]
+    pet.save
     redirect_to pet_path(pet)
+  end
+
+  def destroy
+    pet = Pet.find_by(id: params[:id])
+    pet.destroy
+    #redirect_to pet_path(pet)
+
   end
 
   private

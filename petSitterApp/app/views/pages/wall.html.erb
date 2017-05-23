@@ -1,4 +1,9 @@
 <br>
 <div class="">
     <h3>This page shows all pets in database</h3>
+    <% @wall.each do |p| %>
+
+    <%= image_tag p.image %>
+
+    <% end %>
 </div>
