@@ -12,6 +12,9 @@
   <li>Description: <%= @pet.description %></li>
 
 </ul>
+<%= session["important"] %>
+<%  if @current_supplier.present? && @current_supplier.id == @supplier.id %>
+
     <div class="controls">
       <%= link_to("Edit Pet", "/pets/#{@pet.id}/edit") %>
       <%= link_to("Delete Pet", "/pets/#{@pet.id}", method: :delete, data: { confirm: "Are you sure?" }) %>
@@ -23,3 +26,5 @@
       Owner Name:
       <%= link_to(@pet.user.name, "/users/#{@pet.user_id}") %>
     </p>
+
+<% end %>
