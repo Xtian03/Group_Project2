@@ -2,9 +2,9 @@
   <div class="row center">
       <h5 class="header col s12 light">What is the the location you looking for PetSitter?</h5>
   </div>
-    <%= form_tag(users_path, method: :get) do %>
-    <%= text_field_tag :location  %>
-    <%= submit_tag 'Search', {:class => "searchButton btn-floating btn-large waves-effect blue", required: true} %>
+    <%= form_tag(users_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Sitters" %>
+    <%= submit_tag 'Search', {:name => nil, :class => "searchButton btn-floating btn-large waves-effect blue", required: true} %>
     <% end %>
 
     </div>

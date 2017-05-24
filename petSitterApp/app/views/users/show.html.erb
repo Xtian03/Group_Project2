@@ -10,7 +10,7 @@
   <ul>
     <% @user.services.each do |service| %>
       <div>
-        <%= link_to(name_tag(service.name), "/services/#{service.id}") %>
+        <%= link_to(image_tag(service.name), "/services/#{service.id}") %>
       </div>
     <% end %>
   </ul>
