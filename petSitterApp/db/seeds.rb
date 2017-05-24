@@ -29,7 +29,6 @@ user8 = User.create(name: "Angelique", email: "rocket@rocket.com", password:"roc
 user9 = User.create(name: "Angel", email: "rocket@rocket.com", password:"rocket", password_confirmation: "rocket", location: "Canberra")
 user10 = User.create(name: "Emily", email: "rocket@rocket.com", password:"rocket", password_confirmation: "rocket", location: "Canberra")
 
-
 Pet.destroy_all
 
 pet1 = Pet.create(name: "Bin", date_of_birth: 5, type_of_pet: "Dog", gender: "Male", description: "Brown in colour", image: "http://www.info-psi.estranky.cz/img/picture/30/77256-270px-clyde_the_bulldog.jpg", user_id: user1.id )

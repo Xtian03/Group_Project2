@@ -1,13 +1,21 @@
 <h4>Services Provided</h4>
 <div class="container">
   <div class="row">
+  <% @userall.each do |u| %>
   <% @all_services.each do |s| %>
     <div class="listImage">
+  <!-- <#%= link_to 'Show', user %> -->
+      <p><%= u.name %></p>
+      <p><%= u.location %></p>
       <p><%= s.name %></p>
       <p><%= s.description %></p>
       <p><%= s.price %></p>
       <hr>
     </div>
+    <%= link_to 'Show', service %>
+    <%= link_to 'Edit', edit_service_path(service) %>
+    <%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
   <% end %>
   </div>
 </div>

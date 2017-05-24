@@ -1,28 +1,13 @@
-
-<h1><%= @pet.name %></h1>
-
-<div>
-  <%= image_tag( @pet.image ) %>
-</div>
-<ul>
-  <li>Name: <%= @pet.name %></li>
-  <li>Type: <%= @pet.type_of_pet %></li>
-  <li>Age: <%= @pet.date_of_birth %></li>
-  <li>Sex: <%= @pet.gender %></li>
-  <li>Description: <%= @pet.description %></li>
-
-</ul>
-<%= session["important"] %>
-<%  if @current_supplier.present? && @current_supplier.id == @supplier.id %>
-
-    <div class="controls">
-      <%= link_to("Edit Pet", "/pets/#{@pet.id}/edit") %>
-      <%= link_to("Delete Pet", "/pets/#{@pet.id}", method: :delete, data: { confirm: "Are you sure?" }) %>
+<h4>Pets to take care of</h4>
+<div class="container">
+  <div class="row">
+  <% @pet.each do |p| %>
+    <div class="listImage">
+      <p><%= p.name %></p>
+      <p><%= p.gender %></p>
+      <p><%= p.description %></p>
+      <hr>
     </div>
-
-    <p>
-      Owner Name:
-      <%= link_to(@pet.user.name, "/users/#{@pet.user_id}") %>
-    </p>
-
-<% end %>
+  <% end %>
+  </div>
+</div>

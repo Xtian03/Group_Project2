@@ -1,11 +1,11 @@
-<h4>All Users</h4>
 
-<!-- <h4>
-<%= link_to "Delete Users", "/users/new" %>
-</h4> -->
-
-<% @users_all.each do |user| %>
-<p>
-    <%= link_to( user.name, "/users/#{user.id}" ) %>
-</p>
-<% end %>
+<h4>Available PetSitters</h4>
+<div>
+  <div>
+  <% @userall.each do |user| %>
+    <div class="listImage">
+      <%= link_to(image_tag(user.image), user_path(user)) %>
+    </div>
+  <% end %>
+  </div>
+</div>

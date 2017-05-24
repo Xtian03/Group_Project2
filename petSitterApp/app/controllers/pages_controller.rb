@@ -4,11 +4,15 @@ class PagesController < ApplicationController
   end
 
   def book
-    @user_all = User.all
+    @userall = User.all
   end
 
   def wall
     @pets = Pet.all
+  end
+
+  def search
+    @search = User.where(name: params[:search])
   end
 
 end

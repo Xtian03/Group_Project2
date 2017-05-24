@@ -3,7 +3,18 @@ class UsersController < ApplicationController
   before_action :check_if_logged_in, only: [:edit, :update]
 
   def index
-    @users_all = User.all
+    @userall = User.all
+  # if params["location"] is defined
+  #   if params[:location].present?
+  #   # Users.where("location like ?", "%"+params[:location]+"%")
+  #   # Users.find(:all, :location => ["location like ?", "%"+params[:location]+"%"])
+  # # @users should be all users where the name field matches params["name"]
+  #   @users = User.where(:location => ["location like ?", "%"+params[:location]+"%"])
+  #   # User.where(location_field, "<%#{params[:location]}%>")
+  #   else
+  #   @users = User.search(params[:search])
+  #   end
+
   end
 
   def show
@@ -22,11 +33,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path( @user )
     else
-
       render :new
-        # post.user = @current_user
 
-        # @user.save
     end
   end
 
@@ -35,8 +43,16 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find_by(id: params["id"])
-    user.update( user_params() )
+
+    user = User.find_by( id: params['id'] )
+    user.update( user_params )
+
+    if params[:user][:image]
+      cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
+      user.image = cloudinary["url"]
+    end
+    user.save
+
     redirect_to "/users/#{user.id}"
   end
 
@@ -57,6 +73,7 @@ private
       flash[:error] = "You are already logged in!"
       redirect_to "/users"
     end
+
   end
 
   def check_if_logged_in
