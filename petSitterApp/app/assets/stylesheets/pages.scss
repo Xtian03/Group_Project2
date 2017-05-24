@@ -11,3 +11,18 @@
     text-align: center;
     border-radius: 100%;
 }
+
+.listImage {
+    width: 30% !important;
+    display: inline-block;
+    margin: 1em;
+
+}
+
+.listImage img {
+    width: 200px;
+    border-radius: 10px;
+    border-width: medium;
+    border-color: black;
+    height: 200px;
+}
