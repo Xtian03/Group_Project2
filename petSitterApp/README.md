@@ -1,26 +1,21 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Services/Show
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-tab in navbar show Users.all
+<h4>Services Provided</h4>
+<div class="container">
+  <div class="row">
+  <% @userall.each do |u| %>
+  <% @all_services.each do |s| %>
+    <div class="listImage">
+  <%= link_to 'Show', user %>
+      <p><%= u.name %></p>
+      <p><%= u.location %></p>
+      <p><%= s.name %></p>
+      <p><%= s.description %></p>
+      <p><%= s.price %></p>
+      <hr>
+    </div>
+  <% end %>
+  <% end %>
+  </div>
+</div>

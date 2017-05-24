@@ -1,21 +1,17 @@
-<h4>Services Provided</h4>
-<div class="container">
-  <div class="row">
-  <% @userall.each do |u| %>
-  <% @all_services.each do |s| %>
-    <div class="listImage">
-  <!-- <#%= link_to 'Show', user %> -->
-      <p><%= u.name %></p>
-      <p><%= u.location %></p>
-      <p><%= s.name %></p>
-      <p><%= s.description %></p>
-      <p><%= s.price %></p>
-      <hr>
-    </div>
-    <%= link_to 'Show', service %>
-    <%= link_to 'Edit', edit_service_path(service) %>
-    <%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %>
+<!--   PRINT OUT THE SERVICE OF THE DETAILS -->
+<!-- t.index ["service_id", "user_id"], name: "index_services_users_on_service_id_and_user_id", using: :btree -->
+<!-- t.index ["user_id", "service_id"], name: "index_services_users_on_user_id_and_service_id", using: :btree -->
+
+<div>
+  <%= @service.name %>
+  <%= @service.description %>
+</div>
+
+<hr>
+
+<div>
+  <h2>All Users</h2>
+  <% @service.users.each do |us| %>
+    <%= us.name %>
   <% end %>
-  <% end %>
-  </div>
 </div>

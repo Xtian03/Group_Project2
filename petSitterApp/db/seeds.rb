@@ -14,8 +14,6 @@
 # t.text :image
 # t.integer :user_id
 
-
-
 User.destroy_all
 
 user1 = User.create(name: "Bill", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "imageOfBill")
@@ -34,10 +32,10 @@ Pet.destroy_all
 pet1 = Pet.create(name: "Bin", date_of_birth: 5, type_of_pet: "Dog", gender: "Male", description: "Brown in colour", image: "http://www.info-psi.estranky.cz/img/picture/30/77256-270px-clyde_the_bulldog.jpg", user_id: user1.id )
 pet2 = Pet.create(name: "Smudge", date_of_birth: 5, type_of_pet: "Cat", gender: "Female", description: "White in colour", image: "imageOfCat", user_id: user2.id )
 pet3 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
-pet4 = Pet.create(name: "Groucho", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
-pet5 = Pet.create(name: "Zeppo", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
-pet6 = Pet.create(name: "Barto", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
-pet7 = Pet.create(name: "Marko", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
+pet4 = Pet.create(name: "Groucho", date_of_birth: 15, type_of_pet: "Cat", gender: "Male", description: "Grey in colour", image: "imageOfCat", user_id: user3.id )
+pet5 = Pet.create(name: "Zeppo", date_of_birth: 15, type_of_pet: "Dog", gender: "Female", description: "Blue in colour", image: "imageOfDog", user_id: user3.id )
+pet6 = Pet.create(name: "Barto", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Blue in colour", image: "imageOfDog", user_id: user3.id )
+pet7 = Pet.create(name: "Marko", date_of_birth: 15, type_of_pet: "Cat", gender: "Female", description: "Ghostwhite in colour", image: "imageOfCat", user_id: user3.id )
 pet8 = Pet.create(name: "Hello", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
 pet9 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
 pet10 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
@@ -45,15 +43,15 @@ pet10 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "
 Service.destroy_all
 
 service1 = Service.create(name: "Home Care", description: "All care done at home", price: 24)
-service2 = Service.create(name: "Pet sitter", description: "Taking care at owns house", price: 57)
-service3 = Service.create(name: "Walk", description: "Park walk", price: 42)
-service4 = Service.create(name: "Clean", description: "Park walk", price: 42)
-service5 = Service.create(name: "Walk", description: "Park walk", price: 42)
-service6 = Service.create(name: "Walk", description: "Park walk", price: 42)
-service7 = Service.create(name: "Walk", description: "Park walk", price: 42)
-service8 = Service.create(name: "Walk", description: "Park walk", price: 42)
-service9 = Service.create(name: "Walk", description: "Park walk", price: 42)
-service10 = Service.create(name: "Walk", description: "Park walk", price: 42)
+service2 = Service.create(name: "Pet sitter", description: "Taking care of your pet", price: 57)
+service3 = Service.create(name: "Walk", description: "Walk to the park with your pet", price: 42)
+service4 = Service.create(name: "Clean", description: "Clean with your pet", price: 30)
+service5 = Service.create(name: "Play", description: "Play with your pet", price: 24)
+service6 = Service.create(name: "Skateboard", description: "Skate with your pet", price: 100)
+service7 = Service.create(name: "Skydive", description: "Sky dive with your pet", price: 300)
+service8 = Service.create(name: "Swim", description: "Swim with you pet", price: 50)
+service9 = Service.create(name: "Poker", description: "Play poker with your pet", price: 45)
+service10 = Service.create(name: "Golf", description: "Play golf with your pet", price: 60)
 
 #Bookings.destroy_all
 

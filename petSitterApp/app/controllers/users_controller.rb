@@ -62,6 +62,19 @@ class UsersController < ApplicationController
       redirect_to "/"
   end
 
+  # UPVOTE AND DOWNVOTE RATING
+  def upvote
+  @user = User.find(params[:id])
+  @user.upvote_by @current_user
+  redirect_to :back
+  end
+
+  def downvote
+  @user = User.find(params[:id])
+  @user.downvote_by @current_user
+  redirect_to :back
+  end
+
 private
 
   def user_params

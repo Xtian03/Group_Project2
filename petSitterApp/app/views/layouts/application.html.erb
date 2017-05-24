@@ -24,6 +24,7 @@
       <ul class="right hide-on-med-and-down"><%= link_to "Log Out", "/logout", method: :delete %> </ul>
       <ul class="right hide-on-med-and-down" id="userpic"><%= link_to @current_user.email, user_path(@current_user) %> </ul>
       <ul class="right hide-on-med-and-down"><%= link_to "Edit Profile", edit_user_path(@current_user) %> </ul>
+      <ul class="right hide-on-med-and-down"><%= link_to "Services", edit_service_path(@current_user) %> </ul>  
     <% else %>
        <ul class="right hide-on-med-and-down">
          <li><a href="/login" class="btn-small waves-effect waves-light ">Login</a></li>
