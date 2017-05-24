@@ -1,8 +1,6 @@
 
 <a href="/users" ></a>
 <%= image_tag( @user.image ) %>
-
-
 <ul>
   <li>name: <%= @user.name %></li>
   <li>Location: <%= @user.location %></li>
@@ -10,18 +8,22 @@
   <ul>
     <% @user.services.each do |service| %>
       <div>
+
         <%= link_to(image_tag(service.name), "/services/#{service.id}") %>
+        <%= link_to 'Edit', edit_service_path(service) %>
+      </div>
+      <div>
+        <%=  %>
+
       </div>
     <% end %>
   </ul>
 </ul>
 <div class="container" width: 40%;>
+
 <div class="row center">
 
-
-
 <h2> Pets List </h2>
-
 <ul>
   <% @user.pets.each do |pet| %>
     <div class="listImage" >
@@ -30,8 +32,5 @@
   <% end %>
 </ul>
 
-
-
     </div>
-
 </div>

@@ -5,7 +5,14 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
+<<<<<<< HEAD
+<<<<<<< HEAD
+    #@user = @service.user
+=======
     @user = @service.user
+>>>>>>> c4d9fcaa9e8d76d25f54da95eda6077f823741b6
+=======
+>>>>>>> 66c1ff68db7e539658e4e1eec85b9d929e33507b
   end
 
   def create
@@ -20,6 +27,12 @@ class ServicesController < ApplicationController
 
   def edit
     @service = Service.find_by(id: params["id"])
+  end
+
+  def update
+    @service = Service.find_by(id: params["id"])
+    @service.update(service_params)
+    redirect_to @service, notice: 'Service was successfully updated.'
   end
 
   def destroy

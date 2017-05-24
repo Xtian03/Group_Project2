@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get "/wall" => "pets#index"
 
   get "/book" => "pages#book"
+
+  get "/search" => "pages#search"
+
   get '/users/:id/edit' => 'users#edit'
   patch '/users/:id' => 'users#update'
 
