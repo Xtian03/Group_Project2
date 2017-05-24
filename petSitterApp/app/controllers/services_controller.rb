@@ -5,6 +5,7 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
+    @all_services = Service.all
   end
 
   def create

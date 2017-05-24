@@ -21,6 +21,13 @@ User.destroy_all
 user1 = User.create(name: "Bill", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "imageOfBill")
 user2 = User.create(name: "Hash", email: "hash@hash.com", password: "hash", password_confirmation: "hash", location: "Melbourne", image: "imageOfHash")
 user3 = User.create(name: "Rocket", email: "rocket@rocket.com", password:"rocket", password_confirmation: "rocket", location: "Canberra")
+user4 = User.create(name: "Sam", email: "plight@rocket.com", password:"rocket", password_confirmation: "rocket", location: "Tokyo")
+user5 = User.create(name: "Matt", email: "rocket@rocket.com", password:"rocket", password_confirmation: "rocket", location: "Canberra")
+user6 = User.create(name: "Zayrah", email: "rocket@rocket.com", password:"rocket", password_confirmation: "rocket", location: "Canberra")
+user7 = User.create(name: "Kez", email: "rocket@rocket.com", password:"rocket", password_confirmation: "rocket", location: "Canberra")
+user8 = User.create(name: "Angelique", email: "rocket@rocket.com", password:"rocket", password_confirmation: "rocket", location: "Canberra")
+user9 = User.create(name: "Angel", email: "rocket@rocket.com", password:"rocket", password_confirmation: "rocket", location: "Canberra")
+user10 = User.create(name: "Emily", email: "rocket@rocket.com", password:"rocket", password_confirmation: "rocket", location: "Canberra")
 
 
 Pet.destroy_all
@@ -28,12 +35,26 @@ Pet.destroy_all
 pet1 = Pet.create(name: "Bin", date_of_birth: 5, type_of_pet: "Dog", gender: "Male", description: "Brown in colour", image: "http://www.info-psi.estranky.cz/img/picture/30/77256-270px-clyde_the_bulldog.jpg", user_id: user1.id )
 pet2 = Pet.create(name: "Smudge", date_of_birth: 5, type_of_pet: "Cat", gender: "Female", description: "White in colour", image: "imageOfCat", user_id: user2.id )
 pet3 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
+pet4 = Pet.create(name: "Groucho", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
+pet5 = Pet.create(name: "Zeppo", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
+pet6 = Pet.create(name: "Barto", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
+pet7 = Pet.create(name: "Marko", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
+pet8 = Pet.create(name: "Hello", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
+pet9 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
+pet10 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
 
 Service.destroy_all
 
 service1 = Service.create(name: "Home Care", description: "All care done at home", price: 24)
 service2 = Service.create(name: "Pet sitter", description: "Taking care at owns house", price: 57)
 service3 = Service.create(name: "Walk", description: "Park walk", price: 42)
+service4 = Service.create(name: "Clean", description: "Park walk", price: 42)
+service5 = Service.create(name: "Walk", description: "Park walk", price: 42)
+service6 = Service.create(name: "Walk", description: "Park walk", price: 42)
+service7 = Service.create(name: "Walk", description: "Park walk", price: 42)
+service8 = Service.create(name: "Walk", description: "Park walk", price: 42)
+service9 = Service.create(name: "Walk", description: "Park walk", price: 42)
+service10 = Service.create(name: "Walk", description: "Park walk", price: 42)
 
 #Bookings.destroy_all
 

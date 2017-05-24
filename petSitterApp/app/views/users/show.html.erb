@@ -15,16 +15,21 @@
   </ul>
 </ul>
 <div class="container" width: 40%;>
-   <div class="row center">
-     <a href="/pets/new" class="waves-effect waves-light btn blue">Add New </a>
-</div>
 
+<div class="row center">
+<div class="box">
 <h2> Pets List </h2>
 
-<ul>
   <% @user.pets.each do |pet| %>
     <div class="listImage" >
       <%= link_to(image_tag(pet.image), "/pets/#{pet.id}") %>
+      <%= link_to 'Destroy', pet_path(pet),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }  %>
     </div>
   <% end %>
-</ul>
+
+
+
+    </div>
+</div>

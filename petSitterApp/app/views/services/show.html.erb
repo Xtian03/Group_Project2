@@ -1,1 +1,14 @@
-
+<h4>Services Provided</h4>
+<div class="container">
+  <div class="row">
+  <% @all_services.each do |s| %>
+    <div class="listImage">
+      <%= link_to @all_services, service_path(service) %>
+      <p><%= s.name %></p>
+      <p><%= s.description %></p>
+      <p><%= s.price %></p>
+      <hr>
+    </div>
+  <% end %>
+  </div>
+</div>

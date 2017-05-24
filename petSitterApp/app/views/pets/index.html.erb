@@ -4,9 +4,11 @@
   <% @all_pets.each do |pet| %>
     <div class="listImage">
       <%= link_to(image_tag(pet.image), pet_path(pet)) %>
+      <p><%= pet.name %></p>
+      <p><%= pet.type_of_pet %></p>
       <p><%= pet.gender %></p>
       <p><%= pet.description %></p>
-
+      <hr>
     </div>
   <% end %>
   </div>
