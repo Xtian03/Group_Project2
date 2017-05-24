@@ -16,15 +16,15 @@ p "Users: #{ User.count }"
 Pet.destroy_all
 
 pet1 = Pet.create(name: "Bin", date_of_birth: 5, type_of_pet: "Dog", gender: "Male", description: "Brown in colour", image: "http://www.info-psi.estranky.cz/img/picture/30/77256-270px-clyde_the_bulldog.jpg", user_id: user1.id )
-pet2 = Pet.create(name: "Smudge", date_of_birth: 5, type_of_pet: "Cat", gender: "Female", description: "White in colour", image: "imageOfCat", user_id: user2.id )
-pet3 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user3.id )
-pet4 = Pet.create(name: "Groucho", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user4.id )
-pet5 = Pet.create(name: "Zeppo", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user5.id )
-pet6 = Pet.create(name: "Barto", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user6.id )
-pet7 = Pet.create(name: "Marko", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user7.id )
-pet8 = Pet.create(name: "Hello", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user8.id )
-pet9 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user9.id )
-pet10 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "imageOfDog", user_id: user10.id )
+pet2 = Pet.create(name: "Smudge", date_of_birth: 5, type_of_pet: "Cat", gender: "Female", description: "White in colour", image: "https://www.aspcapetinsurance.com/Images/homepage/dog-insurance-01.jpg", user_id: user2.id )
+pet3 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "https://pbs.twimg.com/profile_images/750381074757320704/Fu3uudxl.jpg", user_id: user3.id )
+pet4 = Pet.create(name: "Groucho", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "https://www.aspcapetinsurance.com/media/1064/mountain-dog.jpg", user_id: user4.id )
+pet5 = Pet.create(name: "Zeppo", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "http://s.hswstatic.com/gif/egyptian-mau-cat.jpg", user_id: user5.id )
+pet6 = Pet.create(name: "Barto", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "http://www.petnap.co.uk/acatalog/Red&blackbed_pd.jpg", user_id: user6.id )
+pet7 = Pet.create(name: "Marko", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "http://www.wigglesnwags.com/wp-content/uploads/2014/01/Sparky-Jim_Donna-Donaghy-400px.jpg", user_id: user7.id )
+pet8 = Pet.create(name: "Hello", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "http://images.shape.mdpcdn.com/sites/shape.com/files/Road-to-Recovery-400x400_0.jpg", user_id: user8.id )
+pet9 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "http://www.tibetanmastiffinfo.com/pedigree/pics/medium/2863/med_55dd900c9f600.jpg", user_id: user9.id )
+pet10 = Pet.create(name: "Box", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "https://www.naturalpetgroup.com.au/wp-content/uploads/2016/10/Pet-Wash-400x400.jpg", user_id: user10.id )
 
 p " Pets: #{ Pet.count } "
 

@@ -4,7 +4,6 @@ class CreateServices < ActiveRecord::Migration[5.0]
       t.string :name
       t.text :description
       t.integer :price
-
       t.timestamps
     end
   end
