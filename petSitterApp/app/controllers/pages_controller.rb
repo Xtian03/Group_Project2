@@ -4,10 +4,11 @@ class PagesController < ApplicationController
   end
 
   def book
+
   end
 
   def wall
-    @wall = Pet.all
+    @pets = Pet.all
   end
 
   def search
