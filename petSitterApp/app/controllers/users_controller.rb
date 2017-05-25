@@ -1,3 +1,4 @@
+require("geocoder")
 class UsersController < ApplicationController
   before_action :check_if_logged_out, only: [:new, :create]
   before_action :check_if_logged_in, only: [:edit, :update]
@@ -28,8 +29,31 @@ class UsersController < ApplicationController
     # @users = User.where(location: params[:search])
     # @users = User.where("location LIKE ?", params[:search])
     # @users = User.where("location ILIKE ?", params[:search])
-    @users = User.where("location ILIKE ?", "%" + params[:search] + "%")
-    # raise "hell"
+    @address = Geocoder.search(params[:search])
+    if @address.length == 0
+      flash[:error] = "Please enter a valid address"
+      render :home
+    end
+
+    @centerLat = @address[0].geometry["location"]["lat"]
+    @centerLng = @address[0].geometry["location"]["lng"]
+
+    @fromLat = @centerLat - 0.01
+    @toLat = @centerLat + 0.01
+
+    @fromLng = @centerLng - 0.01
+    @toLng = @centerLng + 0.01
+
+    #@toLat = @address[0].geometry["viewport"]["northeast"]["lat"]
+    #@fromLat = @address[0].geometry["viewport"]["southwest"]["lat"]
+
+    #@fromLng = @address[0].geometry["viewport"]["southwest"]["lng"]
+    #@toLng = @address[0].geometry["viewport"]["northeast"]["lng"]
+
+    #@users = User.where("cast(latitude as float) > ?",
+    #@fromLat)
+    @users = User.where("cast(latitude as float) > ? and cast(latitude as float) < ? and cast(longitude as float) > ? and cast(longitude as float) < ?",
+    @fromLat, @toLat, @fromLng, @toLng)
   #   # User.where(location_field, "<%#{params[:location]}%>")
 
   #   else
@@ -53,7 +77,15 @@ class UsersController < ApplicationController
   end
 
   def create
+    @address = Geocoder.search(params[ "user" ][ "location" ])
+    if @address.length == 0
+      flash[:error] = "Please enter a valid address"
+      render :new
+    end
+
     @user = User.new( user_params )
+    @user.longitude = @address[0].geometry["location"]["lng"]
+    @user.latitude = @address[0].geometry["location"]["lat"]
     cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
     @user.image = cloudinary["url"]
     if @user.save

@@ -17,6 +17,7 @@ p "Users: #{ User.count }"
 
 
 
+
 Pet.destroy_all
 
 pet1 = Pet.create(name: "Bin", date_of_birth: 5, type_of_pet: "Dog", gender: "Male", description: "Brown in colour", image: "http://www.info-psi.estranky.cz/img/picture/30/77256-270px-clyde_the_bulldog.jpg", user_id: user1.id )
