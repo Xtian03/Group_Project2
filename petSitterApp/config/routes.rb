@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   patch '/users/:id' => 'users#update'
 
 
-  resources :services, :users, :pets
+  resources :services, :users, :pets, :bookings
 
 end

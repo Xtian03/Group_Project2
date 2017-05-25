@@ -1,0 +1,19 @@
+<h3>Edit  your booking</h3>
+
+<%= form_for @booking, url: "/bookings/#{@booking.id}"do |f| %>
+<p>
+  <%= f.label :Service_name %>
+  <%= f.text_field :name, required: true %>
+</p>
+<p>
+<%= f.label :Start_Date_and_Time %>
+<%= f.datetime_field :description, required: true %>
+</p>
+<p>
+<%= f.label :End_Date_and_Time %>
+<%= f.datetime_field :price, required: true %>
+</p>
+<%= f.submit %>
+<% end %>
+
+</div>
