@@ -11,8 +11,7 @@
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
-        <td><p>Owner name: <%= booking.owner.name %>  Service name: <%= booking.id %>  </p>
-            <p>Sitter name <%= booking.sitter.name%></p></td>
+        <td><p>Owner name: <%= booking.owner.name %>  Service name: <%= booking.service.name %>  </p></td>
 
         <td><%= link_to 'Show', booking %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>

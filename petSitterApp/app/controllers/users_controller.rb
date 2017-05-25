@@ -70,7 +70,6 @@ class UsersController < ApplicationController
       user.image = cloudinary["url"]
     end
     user.save
-
     redirect_to "/users/#{user.id}"
   end
 

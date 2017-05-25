@@ -1,5 +1,3 @@
-
-
 User.destroy_all
 
 user1 = User.create(name: "Bill", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
@@ -12,6 +10,9 @@ user7 = User.create(name: "Tramble", email: "bill@bill.com", password: "chicken"
 user8 = User.create(name: "Eustolia", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Canberra", image: "http://www.fillmurray.com/300/300")
 user9 = User.create(name: "Carrales", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
 user10 = User.create(name: "Tramble", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
+
+p "Users: #{ User.count }"
+
 
 Pet.destroy_all
 
@@ -26,17 +27,29 @@ pet8 = Pet.create(name: "Wat", date_of_birth: 15, type_of_pet: "Dog", gender: "M
 pet9 = Pet.create(name: "Bro", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "http://loremflickr.com/320/240/dog", user_id: user9.id )
 pet10 = Pet.create(name: "Fox", date_of_birth: 15, type_of_pet: "Dog", gender: "Male", description: "Ghostwhite in colour", image: "http://loremflickr.com/320/240/dog", user_id: user10.id )
 
+p " Pets: #{ Pet.count } "
 
 Service.destroy_all
 
 service1 = Service.create(name: "Home Care", description: "All care done at home", price: 24)
 service2 = Service.create(name: "Pet sitter", description: "Taking care at owns house", price: 57)
 service3 = Service.create(name: "Walk", description: "Park walk", price: 42)
+service4 = Service.create(name: "Clean", description: "Park walk", price: 42)
+service5 = Service.create(name: "Walk", description: "Park walk", price: 42)
+service6 = Service.create(name: "Walk", description: "Park walk", price: 42)
+service7 = Service.create(name: "Walk", description: "Park walk", price: 42)
+service8 = Service.create(name: "Walk", description: "Park walk", price: 42)
+service9 = Service.create(name: "Walk", description: "Park walk", price: 42)
+service10 = Service.create(name: "Walk", description: "Park walk", price: 42)
+
+p "Services: #{ Service.count }"
 
 Booking.destroy_all
 
-booking1 = Booking.create(start_time: "4", end_time: "7", service_id: service1.id, owner_id: user1.id, sitter_id:user10.id )
-booking2 = Booking.create(start_time: "4", end_time: "7", service_id: service2.id, owner_id: user2.id, sitter_id:user9.id )
-booking1 = Booking.create(start_time: "4", end_time: "7", service_id: service3.id, owner_id: user3.id, sitter_id:user8.id )
-booking1 = Booking.create(start_time: "4", end_time: "7", service_id: service2.id, owner_id: user4.id, sitter_id:user7.id )
-booking1 = Booking.create(start_time: "4", end_time: "7", service_id: service1.id, owner_id: user5.id, sitter_id:user6.id )
+booking1 = Booking.create(start_time: "12", end_time: "23", service_id: service1.id, owner_id: user1.id, sitter_id: user6.id )
+booking1 = Booking.create(start_time: "12", end_time: "23", service_id: service2.id, owner_id: user2.id, sitter_id: user7.id )
+booking1 = Booking.create(start_time: "12", end_time: "23", service_id: service3.id, owner_id: user3.id, sitter_id: user8.id )
+booking1 = Booking.create(start_time: "12", end_time: "23", service_id: service4.id, owner_id: user4.id, sitter_id: user9.id )
+booking1 = Booking.create(start_time: "12", end_time: "23", service_id: service5.id, owner_id: user5.id, sitter_id: user10.id )
+
+p "Bookings: #{Booking.count}"
