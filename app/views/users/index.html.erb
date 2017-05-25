@@ -24,6 +24,7 @@
           var userPos = {
               lat: <%= @users.first.latitude %>,
               lng: <%= @users.first.longitude %>
+              debugger;
           };
           // Using markers array from above, saved this to variable
           var locs = <%= @markers.to_json.html_safe %>

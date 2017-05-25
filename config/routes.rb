@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'session#destroy'
 
 
-  get "/home" => "pages#home"
+  get "/" => "pages#home"
 
   get "/wall" => "pets#index"
 
