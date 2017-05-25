@@ -10,6 +10,28 @@ class BookingsController < ApplicationController
   # GET /bookings/1
   # GET /bookings/1.json
   def show
+    @booking = Booking.find_by(id: params['id'])
+
+  end
+
+def book
+   raise
+  #   When this request hits the controller
+  #   Find the booking with the right ID ( params[:id] )
+  #   Set the owner id to be the ID of whoever is logged in
+  #   Set available to be false
+  #   Save that booking
+  #   Redirect back to /available_bookings
+  @booking = Booking.find_by(id: params["id"])
+  owner_id = @current_user.id
+  @booking.available = false
+  @booking.save
+  redirect_to "/available_bookings"
+
+end
+
+  def available_bookings
+    @available_bookings = Booking.where(available: true)
   end
 
   # GET /bookings/new
@@ -19,12 +41,13 @@ class BookingsController < ApplicationController
 
   # GET /bookings/1/edit
   def edit
+    @booking = Booking.find_by(id: params['id'])
   end
 
   # POST /bookings
   # POST /bookings.json
   def create
-    @booking = Booking.new(booking_params)    
+    @booking = Booking.new(booking_params)
     respond_to do |format|
       if @booking.save
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
