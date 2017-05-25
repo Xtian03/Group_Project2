@@ -5,14 +5,7 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
-<<<<<<< HEAD
-<<<<<<< HEAD
-    #@user = @service.user
-=======
     @user = @service.user
->>>>>>> c4d9fcaa9e8d76d25f54da95eda6077f823741b6
-=======
->>>>>>> 66c1ff68db7e539658e4e1eec85b9d929e33507b
   end
 
   def create

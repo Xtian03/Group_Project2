@@ -1,3 +1,4 @@
+# require("geocoder")
 class PagesController < ApplicationController
 
   def home
