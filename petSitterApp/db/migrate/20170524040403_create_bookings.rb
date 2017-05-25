@@ -6,7 +6,6 @@ class CreateBookings < ActiveRecord::Migration[5.0]
       t.integer :service_id
       t.integer :owner_id
       t.integer :sitter_id
-
       t.timestamps
     end
   end

@@ -1,10 +1,15 @@
+# require("geocoder")
 class PagesController < ApplicationController
 
   def home
   end
 
   def book
+
     @userall = User.all
+
+    #@booking = Booking.all
+
   end
 
   def wall

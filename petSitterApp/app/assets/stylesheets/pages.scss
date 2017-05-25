@@ -34,9 +34,34 @@ img {
 }
 
 
-// .container {
-//     position: absolute;
-//     top: 300px;
-//     left: 15%;
-//     width: 25%;
-// }
+.listImage {
+    width: 30% !important;
+    display: inline-block;
+    margin: 1em;
+
+}
+
+.listImage img {
+    width: 200px;
+    border-radius: 10px;
+    border-width: medium;
+    border-color: black;
+    height: 200px;
+}
+
+
+#pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+}
+
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+}
