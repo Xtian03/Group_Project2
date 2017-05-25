@@ -1,13 +1,10 @@
-
-<div class="container">
-
+<div class="background">
   <div class="row_center">
-      <img class="home_image" alt=""><%= image_tag "dogrun.png" %></img>
+      <a id="home_image"><%= image_tag "dogrun.png" %></a>
       <h5 class="header col s12 light">What is the the location you looking for PetSitter?</h5>
     <%= form_tag(users_path, method: :get) do %>
     <%= text_field_tag :location  %>
     <%= submit_tag 'Search', {:class => "searchButton btn-floating btn-large waves-effect blue", required: true} %>
     <% end %>
     </div>
-
 </div>
