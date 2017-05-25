@@ -81,7 +81,7 @@ private
   def user_params
      params.require(:user).permit(:name, :password, :password_confirmation, :email, :location, :image, :service_ids => [])
      # raty_rate
-     ratyrate_rater
+    #  ratyrate_rater
   end
 
   def check_if_logged_out
