@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20170525043008) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,9 +107,10 @@ ActiveRecord::Schema.define(version: 20170525043008) do
     t.text     "password_digest"
     t.string   "location"
     t.text     "image"
-
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "avg",             default: 3
   end
 
@@ -127,11 +126,6 @@ ActiveRecord::Schema.define(version: 20170525043008) do
     t.datetime "updated_at"
     t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
-
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.float    "latitude"
-    t.float    "longitude"
-
+  end
 
 end
