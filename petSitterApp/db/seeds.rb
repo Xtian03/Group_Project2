@@ -2,21 +2,19 @@
 
 User.destroy_all
 
+
 user1 = User.create(name: "Bill", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
 user2 = User.create(name: "Nick", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Melbourne", image: "http://www.fillmurray.com/300/300")
 user3 = User.create(name: "Zeppo", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Canberra", image: "http://www.fillmurray.com/300/300")
 user4 = User.create(name: "Groucho", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Adelaide", image: "http://www.fillmurray.com/300/300")
-user5 = User.create(name: "Harpo", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Perth", image: "http://www.fillmurray.com/300/300")
-user6 = User.create(name: "Gummo", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
+user5 = User.create(name: "Harpo", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "56 York st, sydney, nsw", image: "http://www.fillmurray.com/300/300")
+user6 = User.create(name: "Gummo", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "22 George st, sydney, nsw", image: "http://www.fillmurray.com/300/300")
 user7 = User.create(name: "Tramble", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
 user8 = User.create(name: "Eustolia", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Canberra", image: "http://www.fillmurray.com/300/300")
 user9 = User.create(name: "Carrales", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
 user10 = User.create(name: "Tramble", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
 
 p "Users: #{ User.count }"
-
-
-
 
 Pet.destroy_all
 
@@ -79,4 +77,3 @@ a_booking4 = Booking.create(start_time: Time.now + 2.days, end_time: Time.now + 
 a_booking5 = Booking.create(start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service5.id, sitter_id: user10.id)
 
 p "Bookings: #{Booking.count}"
-

@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :pets
   has_many :bookings
 
+  geocoded_by :location
+  after_validation :geocode
   ratyrate_rateable "avg"
     # You can rated based around your name
   ratyrate_rater

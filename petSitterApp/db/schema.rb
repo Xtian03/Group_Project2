@@ -130,9 +130,8 @@ ActiveRecord::Schema.define(version: 20170525043008) do
 
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.text     "latitude"
-    t.text     "longitude"
+    t.float    "latitude"
+    t.float    "longitude"
 
-  end
 
 end

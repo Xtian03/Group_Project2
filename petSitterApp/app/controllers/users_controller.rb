@@ -29,37 +29,35 @@ class UsersController < ApplicationController
     # @users = User.where(location: params[:search])
     # @users = User.where("location LIKE ?", params[:search])
     # @users = User.where("location ILIKE ?", params[:search])
-    @address = Geocoder.search(params[:search])
-    if @address.length == 0
-      flash[:error] = "Please enter a valid address"
-      render :home
-    end
-
-    @centerLat = @address[0].geometry["location"]["lat"]
-    @centerLng = @address[0].geometry["location"]["lng"]
-
-    @fromLat = @centerLat - 0.01
-    @toLat = @centerLat + 0.01
-
-    @fromLng = @centerLng - 0.01
-    @toLng = @centerLng + 0.01
-
-    #@toLat = @address[0].geometry["viewport"]["northeast"]["lat"]
-    #@fromLat = @address[0].geometry["viewport"]["southwest"]["lat"]
-
-    #@fromLng = @address[0].geometry["viewport"]["southwest"]["lng"]
-    #@toLng = @address[0].geometry["viewport"]["northeast"]["lng"]
-
-    #@users = User.where("cast(latitude as float) > ?",
-    #@fromLat)
-    @users = User.where("cast(latitude as float) > ? and cast(latitude as float) < ? and cast(longitude as float) > ? and cast(longitude as float) < ?",
-    @fromLat, @toLat, @fromLng, @toLng)
+    # @address = Geocoder.search(params[:search])
+    # if @address.length == 0
+    #   flash[:error] = "Please enter a valid address"
+    #   render :home
+    # end
+    #
+    # @centerLat = @address[0].geometry["location"]["lat"]
+    # @centerLng = @address[0].geometry["location"]["lng"]
+    #
+    # @fromLat = @centerLat - 0.01
+    # @toLat = @centerLat + 0.01
+    #
+    # @fromLng = @centerLng - 0.01
+    # @toLng = @centerLng + 0.01
+    #
+    # #@toLat = @address[0].geometry["viewport"]["northeast"]["lat"]
+    # #@fromLat = @address[0].geometry["viewport"]["southwest"]["lat"]
+    #
+    # #@fromLng = @address[0].geometry["viewport"]["southwest"]["lng"]
+    # #@toLng = @address[0].geometry["viewport"]["northeast"]["lng"]
+    #
+    # #@users = User.where("cast(latitude as float) > ?",
+    # #@fromLat)
+    # # raise
+    # @users = User.where("cast(latitude as float) > ? and cast(latitude as float) < ? and cast(longitude as float) > ? and cast(longitude as float) < ?",
+    # @fromLat, @toLat, @fromLng, @toLng)
   #   # User.where(location_field, "<%#{params[:location]}%>")
 
-  #   else
-  #   @users = User.search(params[:search])
-  #   end
-
+    @users = User.near( params[:search], 50, units: :km )
 
     else
     @users = User.all
