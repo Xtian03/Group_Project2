@@ -41,6 +41,9 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @pet.destroy
     redirect_to pet_path
+    pet = Pet.find(params[:id])
+    pet.destroy
+    redirect_to pet_path(pet)
 
   end
 

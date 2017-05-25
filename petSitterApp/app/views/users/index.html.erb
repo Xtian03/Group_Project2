@@ -1,8 +1,11 @@
 
 <h4>Available PetSitters</h4>
 <div>
-  <div>
-  <% @userall.each do |user| %>
+
+
+
+  <% @users.each do |user| %>
+
     <div class="listImage">
       <% if user.image %>
         <%= link_to(image_tag(user.image), user_path(user)) %>
@@ -12,4 +15,4 @@
     </div>
   <% end %>
   </div>
-</div>
+

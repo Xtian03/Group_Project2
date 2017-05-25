@@ -4,6 +4,7 @@ class ServicesController < ApplicationController
   end
 
   def show
+
     # find the correct service
     # raise
     @service = Service.find_by(id: params["id"])
@@ -15,6 +16,10 @@ class ServicesController < ApplicationController
 
     # @userall = User.all
     # @service = Service.find_by(id: params["id"])
+
+    @service = Service.find(params[:id])
+    #@user = @service.user
+
   end
 
   def create

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   post "/users/:id/rate" => 'ratings#create'
 
   post '/rate' => 'rater#create', :as => 'rate'
@@ -8,6 +9,10 @@ Rails.application.routes.draw do
   get 'ratings/show'
 
   get 'ratings/destroy'
+
+  resources :bookings
+  get "/available_bookings" => 'bookings#available_bookings'
+
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
@@ -25,8 +30,6 @@ Rails.application.routes.draw do
   get '/users/:id/edit' => 'users#edit'
   patch '/users/:id' => 'users#update'
 
-  resources :services, :pets
-
 resources :users do
   member do
   put "like", to: "users#upvote"
@@ -34,5 +37,10 @@ resources :users do
 
    end
 end
+
+  post "/bookings/:id/book" => "bookings#book"
+
+  resources :services, :users, :pets, :bookings
+
 
 end
