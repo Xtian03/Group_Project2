@@ -2,15 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.searchButton {
-    margin: auto;
-    // border: 1px solid blue;
-    margin-left: 40%;
-    width: 10% !important;
-    text-align: center;
-    border-radius: 100%;
+body {
+    background-color: white;
 }
+
+img {
+    border-radius: 10px;
+
+}
+
+.btn-floating.btn-large {
+    width: 150px;
+    height: 30px;
+}
+
+.row_center {
+    text-align: center;
+}
+
 
 .listImage {
     width: 30% !important;
@@ -27,6 +36,7 @@
     height: 200px;
 }
 
+
 #pac-container {
     padding-bottom: 12px;
     margin-right: 12px;
@@ -42,3 +52,5 @@
     text-overflow: ellipsis;
     width: 400px;
 }
+
+

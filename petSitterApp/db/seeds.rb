@@ -1,3 +1,5 @@
+
+
 User.destroy_all
 
 
@@ -14,10 +16,10 @@ user10 = User.create(name: "Tramble", email: "bill@bill.com", password: "chicken
 
 p "Users: #{ User.count }"
 
-
 Pet.destroy_all
 
 pet1 = Pet.create(name: "Bin", date_of_birth: 5, type_of_pet: "Dog", gender: "Male", description: "Brown in colour", image: "http://www.info-psi.estranky.cz/img/picture/30/77256-270px-clyde_the_bulldog.jpg", user_id: user1.id )
+
 pet2 = Pet.create(name: "Smudge", date_of_birth: 5, type_of_pet: "Cat", gender: "Female", description: "Cool", image: "http://loremflickr.com/320/240?random=1", user_id: user2.id )
 pet3 = Pet.create(name: "Smudge", date_of_birth: 5, type_of_pet: "Cat", gender: "Female", description: "White in colour", image: "http://loremflickr.com/320/240?random=1", user_id: user3.id )
 pet4 = Pet.create(name: "Smudge", date_of_birth: 5, type_of_pet: "Cat", gender: "Female", description: "White in colour", image: "http://loremflickr.com/320/240?random=1", user_id: user4.id )
@@ -30,9 +32,24 @@ pet10 = Pet.create(name: "Fox", date_of_birth: 15, type_of_pet: "Dog", gender: "
 
 p " Pets: #{ Pet.count } "
 
+
 Service.destroy_all
 
 service1 = Service.create(name: "Home Care", description: "All care done at home", price: 24)
+
+
+
+#Bookings.destroy_all
+
+#booking1 = Booking.create(start_time: "4", end_time: "7", service_id: service1.id,)
+
+
+# t.datetime :start_time
+# t.datetime :end_time
+# t.integer :service_id
+# t.integer :owner_id
+# t.integer :sitter_id
+
 service2 = Service.create(name: "Pet sitter", description: "Taking care at owns house", price: 57)
 service3 = Service.create(name: "Walk", description: "Park walk", price: 42)
 service4 = Service.create(name: "Clean", description: "Park walk", price: 42)

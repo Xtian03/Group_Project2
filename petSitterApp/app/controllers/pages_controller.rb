@@ -5,7 +5,11 @@ class PagesController < ApplicationController
   end
 
   def book
+
+    @userall = User.all
+
     #@booking = Booking.all
+
   end
 
   def wall

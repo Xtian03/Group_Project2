@@ -56,15 +56,18 @@ class UsersController < ApplicationController
     # @users = User.where("cast(latitude as float) > ? and cast(latitude as float) < ? and cast(longitude as float) > ? and cast(longitude as float) < ?",
     # @fromLat, @toLat, @fromLng, @toLng)
   #   # User.where(location_field, "<%#{params[:location]}%>")
-  # raise "hell"
+
     @users = User.near( params[:search], 50, units: :km )
+
     else
     @users = User.all
     end
+
   end
 
   def show
     @user = User.find_by(id: params["id"])
+
   end
 
   def new
@@ -97,6 +100,7 @@ class UsersController < ApplicationController
   end
 
   def update
+
     user = User.find_by( id: params['id'] )
     user.update( user_params )
 
@@ -114,10 +118,25 @@ class UsersController < ApplicationController
       redirect_to "/"
   end
 
+  # UPVOTE AND DOWNVOTE RATING
+  def upvote
+  @user = User.find(params[:id])
+  @user.upvote_by @current_user
+  redirect_to :back
+  end
+
+  def downvote
+  @user = User.find(params[:id])
+  @user.downvote_by @current_user
+  redirect_to :back
+  end
+
 private
 
   def user_params
      params.require(:user).permit(:name, :password, :password_confirmation, :email, :location, :image, :service_ids => [])
+     # raty_rate
+    #  ratyrate_rater
   end
 
   def check_if_logged_out
