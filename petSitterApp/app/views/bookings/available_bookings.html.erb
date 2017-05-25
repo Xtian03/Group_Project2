@@ -1,0 +1,32 @@
+
+  <% @available_bookings.each do |booking| %>
+
+    <p> Service name: <%= link_to booking.service.name %> </p>
+    <p> Sitter name: <%= link_to booking.sitter.name %> </p>
+    <p> Start time: <%= booking.start_time %> </p>
+    <p> End time: <%= booking.end_time %> </p>
+
+  <% if @current_user %>
+      <%= form_tag( "/bookings/#{booking.id}/book" ) do %>
+      <%= hidden_field_tag( booking.id ) %>
+      <div><%= submit_tag 'Book' %></div>
+      <% end %>
+      <% end %>
+        <hr>
+  <% end %>
+
+
+
+
+  <!-- For each available booking ( need to be in the each loop )
+    Create a form that just a submit button with the text Book ( form_tag )
+    POST /bookings/:id/book -> BookingsController#book
+    We will need to be logged in for this! So we have an owner_id
+
+    When this request hits the controller
+      Find the booking with the right ID ( params[:id] )
+      Set the owner id to be the ID of whoever is logged in
+      Set available to be false
+      Save that booking
+      Redirect back to /available_bookings
+  When you get this done, wrap some condition around the whole form that says only show the form if you @current_user exists -->
