@@ -1,9 +1,12 @@
+
 <h4> <%= @users.count %> PetSitters are available in your area </h4>
 <div>
   <div id="map" style="width:400px; height:400px"></div>
   <div>
 
+
   <% @users.each do |user| %>
+
     <div class="listImage">
       <% if user.image %>
         <%= link_to(image_tag(user.image), user_path(user)) %>
@@ -13,6 +16,7 @@
     </div>
   <% end %>
   </div>
+
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxeAbvMpzSxjfYXVRsxH9F1mmUjiKZ9OU&libraries=visualization"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxeAbvMpzSxjfYXVRsxH9F1mmUjiKZ9OU&libraries=places"></script>
@@ -44,3 +48,6 @@
       }
       initMap();
   </script>
+
+
+

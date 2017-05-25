@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :authorise, only: [:new, :create]
+  # before_action :authorise, only: [:new, :create]
 
   def index
     @all_pets = Pet.all
@@ -24,7 +24,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find_by(id: params["id"])
-    @user = @pet.user
+    # @user = Pet.user
   end
 
   def update
@@ -37,9 +37,13 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    pet = Pet.find_by(id: params[:id])
+
+    @pet = Pet.find(params[:id])
+    @pet.destroy
+    redirect_to pet_path
+    pet = Pet.find(params[:id])
     pet.destroy
-    #redirect_to pet_path(pet)
+    redirect_to pet_path(pet)
 
   end
 
