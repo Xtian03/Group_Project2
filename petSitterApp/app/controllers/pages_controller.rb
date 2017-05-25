@@ -5,10 +5,11 @@ class PagesController < ApplicationController
   end
 
   def book
+    #@booking = Booking.all
   end
 
   def wall
-    @wall = Pet.all
+    @pets = Pet.all
   end
 
   def search

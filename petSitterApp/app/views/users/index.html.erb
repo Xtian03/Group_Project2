@@ -1,4 +1,4 @@
-<h4> <%= @users.count %> PetSitters are available in your area </h4>
+<h4> <%= @users.length %> PetSitters are available in your area </h4>
 <div>
   <div id="map" style="width:400px; height:400px"></div>
   <div>
@@ -19,8 +19,8 @@
 <script>
       function initMap() {
           var userPos = {
-              lat: <%= @centerLat %>,
-              lng: <%= @centerLng %>
+              lat: <%= @users.first.latitude %>,
+              lng: <%= @users.first.longitude %>
           };
           // Using markers array from above, saved this to variable
           var locs = <%= @markers.to_json.html_safe %>

@@ -1,4 +1,24 @@
 <br>
 <div class="">
-    <h3>This page is for booking a person for a service</h3>
+
+    <h3>Book a person for a service</h3>
+    <h3>Please fill up the form below</h3>
+
+    <%= form_for @booking do |f| %>
+      <p>
+        <%= f.label :Start_Date_and_Time %>
+        <%= f.datetime_field :start_time, required: true %>
+      </p>
+      <p>
+      <%= f.label :End_Date_and_Time %>
+      <%= f.datetime_field :end_time, required: true %>
+      </p>
+      <p>
+
+      <%= f.label :Service_Type%>
+      <%= f.text_field :service_id, required: true %>
+      </p>
+      <%= f.submit "Submit"%>
+    <% end %>
+
 </div>
