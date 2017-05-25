@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  post "/users/:id/rate" => 'ratings#create'
+
+  post '/rate' => 'rater#create', :as => 'rate'
   get 'ratings/index'
 
   get 'ratings/show'
@@ -9,6 +12,7 @@ Rails.application.routes.draw do
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/logout' => 'session#destroy'
+
 
   get "/" => "pages#home"
 

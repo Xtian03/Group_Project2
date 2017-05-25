@@ -3,7 +3,7 @@
   <div class="row">
   <% @userall.each do |u| %>
     <div class="person">
-      <%= link_to @userall, user_path(u) %>
+      <% link_to @userall, user_path(u) %>
         <p><%= u.image %></p>
         <p><%= u.name %></p>
         <p><%= u.email %></p>
