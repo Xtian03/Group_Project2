@@ -27,4 +27,5 @@
     </p>
 
     <%= f.submit"Update Profile" %>
+    <%= link_to 'Delete Profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>

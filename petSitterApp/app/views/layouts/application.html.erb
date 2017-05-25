@@ -8,40 +8,26 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
   <body>
-    <%= flash[:error] %>
-     <div class="navbar">
-       <nav class="blue accent-2" role="navigation">
-         <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo"><img src="http://i.imgur.com/iQznv6t.png" class="logo"></a>
 
-
-    <% if @current_user %>
-      <ul class="right hide-on-med-and-down"><%= link_to "Log Out", "/logout", method: :delete %> </ul>
-      <ul class="right hide-on-med-and-down" id="userpic"><%= link_to @current_user.email, user_path(@current_user) %> </ul>
-      <ul class="right hide-on-med-and-down"><%= link_to "Edit Profile", edit_user_path(@current_user) %> </ul>
-    <% else %>
-       <ul class="right hide-on-med-and-down">
-         <li><a href="/login" class="btn-small waves-effect waves-light ">Login</a></li>
-       </ul>
-       <ul class="right hide-on-med-and-down">
-         <li><a href="/users/new" class="btn-small waves-effect waves-light ">Sign Up</a></li>
-       </ul>
-    <% end %>
-
-        <ul class="right hide-on-med-and-down">
-          <li><a href="/book" class="btn-small waves-effect waves-light">Book A Sitter</a></li>
-        </ul>
-
-        <ul class="right hide-on-med-and-down">
-          <li><a href="/wall" class="btn-small waves-effect waves-light">Wall Of Pets</a></li>
-        </ul>
-
-      </div>
-    </div>
-  </nav>
-
-
+<nav>
+  <div class="nav-wrapper">
+    <a href="/home" id="brand-logo"><%= image_tag "petcare.png" %></a>
+    <ul class="right hide-on-med-and-down">
+      <% if @current_user %>
+        <li><%= link_to "Log Out", "/logout", method: :delete %><li>
+        <li><%= link_to @current_user.email, user_path(@current_user) %><li>
+        <li><%= link_to "Edit Profile", edit_user_path(@current_user) %> <li>
+        <li><%= link_to "Services", "/services" %> <li>
+      <% else %>
+         <li><a href="/login">Login</a></li>
+         <li><a href="/users/new">Sign Up</a></li>
+       <% end  %>
+       <li><a href="/book">Book a Sitter</a></li>
+       <li><a href="/wall">Wall of Pets</a></li>
+      </ul>
+   </div>
+</nav>
 
     <%= yield %>
   </body>
