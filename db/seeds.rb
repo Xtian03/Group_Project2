@@ -67,11 +67,11 @@ p "Services: #{ Service.count }"
 
 Booking.destroy_all
 
-booking1 = Booking.create(available: false, start_time: "12", end_time: "23", service_id: service1.id, owner_id: user1.id, sitter_id: user6.id )
-booking1 = Booking.create(available: false, start_time: "12", end_time: "23", service_id: service2.id, owner_id: user2.id, sitter_id: user7.id )
-booking1 = Booking.create(available: false, start_time: "12", end_time: "23", service_id: service3.id, owner_id: user3.id, sitter_id: user8.id )
-booking1 = Booking.create(available: false, start_time: "12", end_time: "23", service_id: service4.id, owner_id: user4.id, sitter_id: user9.id )
-booking1 = Booking.create(available: false, start_time: "12", end_time: "23", service_id: service5.id, owner_id: user5.id, sitter_id: user10.id )
+booking1 = Booking.create(available: false, start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service1.id, owner_id: user1.id, sitter_id: user6.id )
+booking1 = Booking.create(available: false, start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service2.id, owner_id: user2.id, sitter_id: user7.id )
+booking1 = Booking.create(available: false, start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service3.id, owner_id: user3.id, sitter_id: user8.id )
+booking1 = Booking.create(available: false, start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service4.id, owner_id: user4.id, sitter_id: user9.id )
+booking1 = Booking.create(available: false, start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service5.id, owner_id: user5.id, sitter_id: user10.id )
 
 a_booking1 = Booking.create(start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service1.id, sitter_id: user6.id)
 a_booking2 = Booking.create(start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service2.id, sitter_id: user7.id)
