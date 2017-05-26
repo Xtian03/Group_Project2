@@ -51,7 +51,7 @@
 
 </div>
 
-<% if @current_user.id == @user.id %>
+<% if @current_user.present? && @current_user.id == @user.id %>
   <h2>Things I have booked</h2>
 
   <% @user.appointments.each do |b| %>
