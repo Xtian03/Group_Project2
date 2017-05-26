@@ -4,6 +4,9 @@ class User < ApplicationRecord
   has_many :pets
   has_many :bookings
 
+  has_many :available_bookings, class_name: "Booking", foreign_key: "sitter_id"
+  has_many :appointments, class_name: "Booking", foreign_key: "owner_id"
+
   geocoded_by :location
   after_validation :geocode
   ratyrate_rateable "avg"

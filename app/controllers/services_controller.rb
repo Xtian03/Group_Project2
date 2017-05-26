@@ -11,9 +11,7 @@ class ServicesController < ApplicationController
     # find all the users who can provide that service and pass both of those
     # @service.users
     # @userall = service.name
-
     # through the show html.erb
-
     # @userall = User.all
     # @service = Service.find_by(id: params["id"])
 

@@ -2,12 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 .login_image {
-  margin-left: 25%;
-  top: 50px;
+  position: relative;
+  margin-left: 30%;
+  top: 20px;
+  height: 300px;
+  width: 300px;
 }
 
 .login_page {
   position: relative;
   top: 50px;
+  left: 3%;
+  font-size: 16px;
+  width: 100%;
+}
+
+.waves-effect.waves-light.btn {
+  position: relative;
+  left: 40%;
+  width: 100%;
 }

@@ -4,8 +4,6 @@
 </div>
 
 
-
-
 <div class="login_page">
 
 <% if flash[:login_error] %>
@@ -26,7 +24,7 @@
     <%= label_tag :password %>
     <%= password_field_tag :password %>
   </div>
-  <div class="row" style="width:250px"><%= submit_tag "Login" %></div>
+  <a class="waves-effect waves-light btn"><i class="material-icons left">perm_identity</i><div class="row" style="width:250px"><%= submit_tag "Login" %></div></a>
 </div>
 
 <% end %>
