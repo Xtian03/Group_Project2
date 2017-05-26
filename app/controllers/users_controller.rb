@@ -57,7 +57,7 @@ class UsersController < ApplicationController
     # @fromLat, @toLat, @fromLng, @toLng)
   #   # User.where(location_field, "<%#{params[:location]}%>")
 
-    @users = User.near( params[:search], 50, units: :km )
+    @users = User.near( params[:search], 20, units: :km )
 
     else
     @users = User.all
@@ -67,7 +67,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params["id"])
-
   end
 
   def new
@@ -91,9 +90,9 @@ class UsersController < ApplicationController
       redirect_to user_path( @user )
     else
       render :new
-
     end
   end
+
 
   def edit
     @user = User.find_by(id: params['id'])

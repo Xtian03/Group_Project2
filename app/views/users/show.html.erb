@@ -24,7 +24,7 @@
 </ul>
 <div class="container" width: 40%;>
 
-  <% if @current_user.present? && @current_user.id == @pet.user_id %>
+<% if @current_user.present? && @current_user.id == @user.id %>
   <div class="row center">
     <a href="/pets/new" class="waves-effect waves-light btn blue">Add New Pet</a>
  </div>
@@ -39,7 +39,8 @@
     <div class="listImage" >
       <% @user.pets.each do |pet| %>
       <%= link_to(image_tag(pet.image), "/pets/#{pet.id}") %>
-      <% if @current_user.present? && @current_user.id == @pet.user_id %>
+
+      <% if @current_user.present? && @current_user.id == pet.user_id %>
       <%= link_to 'Delete', pet_path(pet),
               method: :delete,
               data: { confirm: 'Are you sure?' }  %>
