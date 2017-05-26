@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :bookings
   get "/available_bookings" => 'bookings#available_bookings'
+  get "/booked_users" =>"bookings#booked_users"
 
 
   get '/login' => 'session#new'

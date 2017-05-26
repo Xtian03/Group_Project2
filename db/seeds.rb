@@ -4,8 +4,8 @@ User.destroy_all
 
 
 user1 = User.create(name: "Bill", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
-user2 = User.create(name: "Nick", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Melbourne", image: "http://www.fillmurray.com/300/300")
-user3 = User.create(name: "Zeppo", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Canberra", image: "http://www.fillmurray.com/300/300")
+user2 = User.create(name: "Nick", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Melbourne", image: "https://thechristmasnetwork.com/wp-content/uploads/2016/05/santaicon-300x300.png")
+user3 = User.create(name: "Zeppo", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Canberra", image: "https://cdn.pastemagazine.com/www/blogs/lists/6a00d83451fdc069e20133f0eaa61f970b-320pi.jpeg")
 user4 = User.create(name: "Groucho", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Adelaide", image: "http://www.fillmurray.com/300/300")
 user5 = User.create(name: "Harpo", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "56 York st, sydney, nsw", image: "http://www.fillmurray.com/300/300")
 user6 = User.create(name: "Gummo", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "22 George st, sydney, nsw", image: "http://www.fillmurray.com/300/300")
