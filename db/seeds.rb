@@ -3,16 +3,19 @@
 User.destroy_all
 
 
-user1 = User.create(name: "Bill", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
-user2 = User.create(name: "Nick", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Melbourne", image: "https://thechristmasnetwork.com/wp-content/uploads/2016/05/santaicon-300x300.png")
-user3 = User.create(name: "Zeppo", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Canberra", image: "https://cdn.pastemagazine.com/www/blogs/lists/6a00d83451fdc069e20133f0eaa61f970b-320pi.jpeg")
-user4 = User.create(name: "Groucho", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Adelaide", image: "http://www.fillmurray.com/300/300")
-user5 = User.create(name: "Harpo", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "56 York st, sydney, nsw", image: "http://www.fillmurray.com/300/300")
-user6 = User.create(name: "Gummo", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "22 George st, sydney, nsw", image: "http://www.fillmurray.com/300/300")
-user7 = User.create(name: "Tramble", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
-user8 = User.create(name: "Eustolia", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Canberra", image: "http://www.fillmurray.com/300/300")
-user9 = User.create(name: "Carrales", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
-user10 = User.create(name: "Tramble", email: "bill@bill.com", password: "chicken", password_confirmation: "chicken", location: "Sydney", image: "http://www.fillmurray.com/300/300")
+user1 = User.create(name: "Bill Gates", email: "bill@gates.com", password: "chicken", password_confirmation: "chicken", location: "12 york st, Sydney", image: "https://www.project-syndicate.org/default/library/eb7a653970f377481252dbb4a16923f2.square.jpg")
+user2 = User.create(name: "Nick Johnson", email: "nick@johnson.com", password: "chicken", password_confirmation: "chicken", location: "opera house Sydney", image: "http://allsportstucson.com/wp-content/uploads/2014/01/2013.14.NJohnson.jpg")
+user3 = User.create(name: "Zeppo Marx", email: "zeppo@marx.com", password: "chicken", password_confirmation: "chicken", location: "12 gladstone street, balmain", image: "https://s-media-cache-ak0.pinimg.com/236x/f5/7d/6c/f57d6cdf4a629dfcbae58ab253d0a887.jpg")
+user4 = User.create(name: "Groucho Marx", email: "groucho@marx.com", password: "chicken", password_confirmation: "chicken", location: "45 elizabeth street, sydney, nsw", image: "http://www.nndb.com/people/855/000031762/groucho2-sm.jpg")
+user5 = User.create(name: "Harpo Marx", email: "harpo@marx.com", password: "chicken", password_confirmation: "chicken", location: "56 York st, sydney, nsw", image: "https://static.comicvine.com/uploads/original/6/64684/1376887-harpo_marx_5.jpg")
+user6 = User.create(name: "Gummo Marx", email: "gummo@marx.com", password: "chicken", password_confirmation: "chicken", location: "22 George st, sydney, nsw", image: "http://3.bp.blogspot.com/--30y2A2GA2M/TcNgy6-S4II/AAAAAAAAA3k/RT3Xx5GPSq8/s320/zeppo.jpg")
+user7 = User.create(name: "Donald Trump", email: "donald@trump.com", password: "chicken", password_confirmation: "chicken", location: "120 eppin rd, Lane cove", image: "https://pbs.twimg.com/profile_images/1297925528/donald-trump_400x400.jpg")
+user8 = User.create(name: "Nicole Kidman", email: "nicole@kidman.com", password: "chicken", password_confirmation: "chicken", location: "33 parramatta road, five dock", image: "http://www.topnews.in/files/Nicole-Kidman_1.jpg")
+user9 = User.create(name: "Angelina Julie ", email: "angelina@julie.com", password: "chicken", password_confirmation: "chicken", location: "22 hunter street, parramatta", image: "http://cdn03.cdn.justjared.com/wp-content/uploads/headlines/2017/03/angelina-jolie-meets-with-archbishop.jpg")
+user10 = User.create(name: "David Beckham", email: "david@beckham.com", password: "chicken", password_confirmation: "chicken", location: "6 carr st, waverton", image: "http://www.hellomagazine.com/imagenes/profiles/david-beckham/6301-david-beckham.jpg.jpg")
+user11 = User.create(name: "Salman khan", email: "salman@khan.com", password: "chicken", password_confirmation: "chicken", location: "33 carr st, waverton", image: "http://fanpix.famousfix.com/gallery/salman-khan/p20351492")
+user12 = User.create(name: "Barack Obama", email: "barack@obama.com", password: "chicken", password_confirmation: "chicken", location: "134-136 walker st, North Sydney", image: "https://s-media-cache-ak0.pinimg.com/236x/6f/ce/6a/6fce6aeb696fc98214ebe296db1f4cf5.jpg")
+user13 = User.create(name: "Matt Toussi", email: "matt@toussi.com", password: "chicken", password_confirmation: "chicken", location: "108 victoria street, ashfield ", image: "http://4vector.com/i/free-vector-male-user-icon-clip-art_117343_Male_User_Icon_clip_art_medium.png")
 
 p "Users: #{ User.count }"
 
