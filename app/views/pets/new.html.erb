@@ -3,12 +3,12 @@
 
 <%= form_for(@pet, :html => { :multipart => true }) do |f| %>
   <p>
-    <%= f.label :name %>
+    <%= f.label :pet_name %>
     <%= f.text_field :name, required: true %>
   </p>
   <p>
     <%= f.label :date_of_birth %>
-    <%= f.text_field :date_of_birth, required: true %>
+    <%= f.date_field :date_of_birth, required: true %>
   </p>
   <p>
     <%= f.label :type_of_pet %>

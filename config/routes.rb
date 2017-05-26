@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :bookings
   get "/available_bookings" => 'bookings#available_bookings'
+  get "/booked_users" =>"bookings#booked_users"
 
 
   get '/login' => 'session#new'
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'session#destroy'
 
 
+  get "/" => "pages#home"
   get "/home" => "pages#home"
 
   get "/wall" => "pets#index"
