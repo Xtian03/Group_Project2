@@ -1,3 +1,6 @@
+
+<h1>Create a Pet</h1>
+
 <%= form_for(@pet, :html => { :multipart => true }) do |f| %>
   <p>
     <%= f.label :name %>
@@ -23,6 +26,6 @@
     <%= f.label :image %>
     <%= f.file_field :image, required: true %>
   </p>
-  <%= f.submit "Add Pet"%>
+  <a class="waves-effect waves-light btn"><%= f.submit "Add Pet"%></a>
 
   <% end %>

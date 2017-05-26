@@ -26,6 +26,8 @@
       <%= f.file_field :image %>
     </p>
 
-    <%= f.submit"Update Profile" %>
-    <%= link_to 'Delete Profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <a class="waves-effect waves-light btn"><%= f.submit "Update Profile" %></a>
+
+    <%= link_to "Delete Profile", @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+
     <% end %>

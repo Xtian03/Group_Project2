@@ -1,4 +1,6 @@
-<h1>Services</h1>
+<div class="background1">
+  <h1>Services</h1>
+<a id="service_image"><%= image_tag "service_care.png" %></a>
 
 <table>
   <thead>
@@ -9,7 +11,9 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  <a id="new_service">
+    <%= link_to 'New Service', new_service_path %>
+  </a>
   <tbody>
     <% @all_services.each do |service| %>
       <tr>
@@ -18,12 +22,10 @@
         <td><%= service.description %></td>
         <td><%= link_to 'Show', service %></td>
         <td><%= link_to 'Edit', edit_service_path(service) %></td>
-        <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete Service', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Service', new_service_path %>
+</div>
