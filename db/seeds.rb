@@ -13,7 +13,7 @@ user7 = User.create(name: "Donald Trump", email: "donald@trump.com", password: "
 user8 = User.create(name: "Nicole Kidman", email: "nicole@kidman.com", password: "chicken", password_confirmation: "chicken", location: "33 parramatta road, five dock", image: "http://www.topnews.in/files/Nicole-Kidman_1.jpg")
 user9 = User.create(name: "Angelina Julie ", email: "angelina@julie.com", password: "chicken", password_confirmation: "chicken", location: "22 hunter street, parramatta", image: "http://cdn03.cdn.justjared.com/wp-content/uploads/headlines/2017/03/angelina-jolie-meets-with-archbishop.jpg")
 user10 = User.create(name: "David Beckham", email: "david@beckham.com", password: "chicken", password_confirmation: "chicken", location: "6 carr st, waverton", image: "http://www.hellomagazine.com/imagenes/profiles/david-beckham/6301-david-beckham.jpg.jpg")
-user11 = User.create(name: "Salman khan", email: "salman@khan.com", password: "chicken", password_confirmation: "chicken", location: "33 carr st, waverton", image: "http://fanpix.famousfix.com/gallery/salman-khan/p20351492")
+user11 = User.create(name: "Salman khan", email: "salman@khan.com", password: "chicken", password_confirmation: "chicken", location: "33 carr st, waverton", image: "http://img2.bdbphotos.com/images/orig/1/5/15zjjpyxeksxexsj.jpg?kj8as6ye")
 user12 = User.create(name: "Barack Obama", email: "barack@obama.com", password: "chicken", password_confirmation: "chicken", location: "134-136 walker st, North Sydney", image: "https://s-media-cache-ak0.pinimg.com/236x/6f/ce/6a/6fce6aeb696fc98214ebe296db1f4cf5.jpg")
 user13 = User.create(name: "Matt Toussi", email: "matt@toussi.com", password: "chicken", password_confirmation: "chicken", location: "108 victoria street, ashfield ", image: "http://4vector.com/i/free-vector-male-user-icon-clip-art_117343_Male_User_Icon_clip_art_medium.png")
 
@@ -67,11 +67,11 @@ p "Services: #{ Service.count }"
 
 Booking.destroy_all
 
-booking1 = Booking.create(available: false, start_time: "12", end_time: "23", service_id: service1.id, owner_id: user1.id, sitter_id: user6.id )
-booking1 = Booking.create(available: false, start_time: "12", end_time: "23", service_id: service2.id, owner_id: user2.id, sitter_id: user7.id )
-booking1 = Booking.create(available: false, start_time: "12", end_time: "23", service_id: service3.id, owner_id: user3.id, sitter_id: user8.id )
-booking1 = Booking.create(available: false, start_time: "12", end_time: "23", service_id: service4.id, owner_id: user4.id, sitter_id: user9.id )
-booking1 = Booking.create(available: false, start_time: "12", end_time: "23", service_id: service5.id, owner_id: user5.id, sitter_id: user10.id )
+booking1 = Booking.create(available: false, start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service1.id, owner_id: user1.id, sitter_id: user6.id )
+booking1 = Booking.create(available: false, start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service2.id, owner_id: user2.id, sitter_id: user7.id )
+booking1 = Booking.create(available: false, start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service3.id, owner_id: user3.id, sitter_id: user8.id )
+booking1 = Booking.create(available: false, start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service4.id, owner_id: user4.id, sitter_id: user9.id )
+booking1 = Booking.create(available: false, start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service5.id, owner_id: user5.id, sitter_id: user10.id )
 
 a_booking1 = Booking.create(start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service1.id, sitter_id: user6.id)
 a_booking2 = Booking.create(start_time: Time.now + 2.days, end_time: Time.now + 3.days, service_id: service2.id, sitter_id: user7.id)

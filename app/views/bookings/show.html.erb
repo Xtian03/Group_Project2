@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<%= @booking.owner.name %>
+<% if @booking.owner %>
+  <%= @booking.owner.name %>
+<% end %>
 <%= @booking.sitter.name %>
 <%= @booking.start_time %>
 <%= @booking.end_time %>

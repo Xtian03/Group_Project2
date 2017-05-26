@@ -21,7 +21,7 @@ def book
   #   Save that booking
   #   Redirect back to /available_bookings
   @booking = Booking.find_by(id: params["id"])
-  owner_id = @current_user.id
+  @booking.owner_id = @current_user.id
   @booking.available = false
   @booking.save
   redirect_to "/available_bookings"
@@ -51,6 +51,8 @@ end
   # POST /bookings.json
   def create
     @booking = Booking.new(booking_params)
+    @booking.sitter_id = @current_user.id
+    # raise "hell"
     respond_to do |format|
       if @booking.save
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
