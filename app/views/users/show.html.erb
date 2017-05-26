@@ -1,16 +1,23 @@
 
-<a href="/users" ></a>
+<a href="/users" class="user_image" ></a>
 <% if @user.image %>
   <%= image_tag( @user.image ) %>
 <% end %>
-<ul>
-  <li>name: <%= @user.name %></li>
+
+<ul class="user_details">
+  <li>Name: <%= @user.name %></li>
   <li>Location: <%= @user.location %></li>
   <li>Email: <%= @user.email %></li>
   <li>
       Average Rating: <%= rating_for @user, "avg", path: 'star_icons', cancel: true, cancel_hint: 'Cancel this rating!', cancel_place: 'right', disable_after_rate: false  %>
   </li>
+
+</ul>
+
+<ul class="service_details">
+    <% @user.services.each do |service| %>
   <ul>
+
 
       <div>
         <% @user.services.each do |service| %>
@@ -19,11 +26,14 @@
         <% end %>
       </div>
 
+      <div>
+        <%=  %>
+      </div>
+    <% end %>
 
-  </ul>
-</ul>
+
+
 <div class="container" width: 40%;>
-
 <% if @current_user.present? && @current_user.id == @user.id %>
   <div class="row center">
     <a href="/pets/new" class="waves-effect waves-light btn blue">Add New Pet</a>
@@ -42,6 +52,7 @@
 
       <% if @current_user.present? && @current_user.id == pet.user_id %>
       <%= link_to 'Delete', pet_path(pet),
+
               method: :delete,
               data: { confirm: 'Are you sure?' }  %>
           <% end %>
